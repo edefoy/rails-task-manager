@@ -1,0 +1,11 @@
+<h1>Edit task <%= @task.title %></h1>
+
+<br>
+<br>
+
+<%= render "form", task: @task %>
+
+<br>
+<br>
+
+<%= link_to "Back", task_path(@task) %>

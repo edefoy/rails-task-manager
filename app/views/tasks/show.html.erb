@@ -1,0 +1,35 @@
+<h1><%= @task.title %></h1>
+
+<br>
+<br>
+
+<div>
+  <%= @task.details %>
+</div>
+
+<br>
+<br>
+
+<div>
+  <%= check_box_tag(@task.title, value=@task.title, checked = @task.completed) %>
+  <% if @task.completed %>
+    <%= label_tag("That task is done") %>
+  <% else %>
+    <%= label_tag("That task has not been completed yet!") %>
+  <% end %>
+</div>
+
+<br>
+<br>
+
+<%= link_to "Edit", edit_task_path(@task) %>
+
+<br>
+<br>
+
+<%= link_to "Delete", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<br>
+<br>
+
+<%= link_to "Back", tasks_path %>
